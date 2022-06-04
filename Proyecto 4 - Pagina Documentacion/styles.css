@@ -1,0 +1,131 @@
+/* @link https://utopia.fyi/type/calculator?c=320,18,1.2,2160,24,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l */
+
+:root {
+  --step--2: clamp(0.78rem, calc(0.75rem + 0.16vw), 0.96rem);
+  --step--1: clamp(0.94rem, calc(0.89rem + 0.23vw), 1.2rem);
+  --step-0: clamp(1.13rem, calc(1.06rem + 0.33vw), 1.5rem);
+  --step-1: clamp(1.35rem, calc(1.26rem + 0.46vw), 1.88rem);
+  --step-2: clamp(1.62rem, calc(1.49rem + 0.63vw), 2.34rem);
+  --step-3: clamp(1.94rem, calc(1.77rem + 0.86vw), 2.93rem);
+  --step-4: clamp(2.33rem, calc(2.1rem + 1.16vw), 3.66rem);
+  --step-5: clamp(2.8rem, calc(2.49rem + 1.55vw), 4.58rem);
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: "Roboto Mono", monospace, sans-serif;
+  line-height: 1.5;
+  color: #4d4e53;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+}
+
+header {
+  margin-bottom: 1.6rem 0;
+  padding: 1.5rem;
+  font-size: var(--step-0);
+  font-weight: bold;
+  text-align: center;
+}
+
+code {
+  display: block;
+  padding: 1rem;
+  min-width: auto;
+  background-color: #cfcfcf;
+  overflow-x: auto;
+  word-break: break-word;
+  text-align: left;
+  white-space: pre-line;
+  border-radius: 5px;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+#navbar {
+  position: sticky;
+  top: 0;
+  max-width: 100%;
+  height: 40vh;
+  background-color: #fff;
+  border-bottom: thin solid black;
+}
+
+#navbar > header {
+  background-color: #00000030;
+}
+
+#navbar > ul {
+  height: 77%;
+  margin: 0;
+  padding: 0 0 0.5rem 0;
+  list-style: none;
+  overflow: hidden auto;
+  line-height: 1;
+  border-left: thin solid;
+  border-right: thin solid;
+  box-shadow: 0 0 1rem #00000030 inset;
+}
+
+#navbar li {
+  border-top: thin solid;
+  padding: 1rem;
+  width: 100%;
+}
+
+#navbar a {
+  text-decoration: none;
+  padding: 10px 30px;
+  color: #4d4e53;
+  cursor: pointer;
+}
+
+#main-doc {
+}
+
+@media screen and (min-width: 800px) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: space-between;
+  }
+  #navbar {
+    position: fixed;
+    top: 0px;
+    width: calc(100vw / 4);
+    height: 100%;
+    max-width: 100%;
+    border-right: thin solid;
+    grid-column: 1/2;
+  }
+
+  #navbar ul {
+    height: 88%;
+    overflow-y: auto;
+  }
+  #main-doc {
+    grid-column: 2/5;
+    padding: 1rem;
+    margin: 1rem;
+  }
+
+  #main-doc header {
+    text-align: left;
+    margin-top: 0;
+  }
+
+  @media screen and (min-width: 2024px) {
+    html {
+      font-size: var(--step-3);
+    }
+  }
+}

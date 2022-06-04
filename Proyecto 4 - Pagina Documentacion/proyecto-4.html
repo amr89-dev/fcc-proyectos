@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Documentación CSS</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,400;0,700;1,400&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <div class="grid-container">
+    <nav id="navbar" class="nav-bar">
+      <header>Documentación CSS</header>
+      <ul>
+        <li><a href="#introduccion_a_css" class="nav-link"><b>Introducción a CSS</b></a></li>
+        <li><a href="#sintaxis-basica" class="nav-link">- Sintaxis Básica</a></li>
+        <li><a href="#comentarios" class="nav-link">- Comentarios</a></li>
+        <li><a href="#enlace" class="nav-link">- Formas de Aplicar CSS</a></li>
+        <li><a href="#selectores_css" class="nav-link"><b>Selectores CSS</b></a></li>
+        <li><a href="#select-basicos" class="nav-link">- Selectores Básicos</a></li>
+        <li><a href="#select-direct-des" class="nav-link">- Selector de Hijo Directo y Descendientes</a></li>
+        <li><a href="#select-her-adya" class="nav-link">- Selector de hermanos y adyacente</a></li>
+        <li><a href="#select-atributos" class="nav-link">- Selectores de atributos</a></li>
+        <li><a href="#select-universal" class="nav-link">- Selector Universal</a></li>
+        <li><a href="#select-agrupa" class="nav-link">- Agrupación de selectores</a></li>
+        <li><a href="#pseudo-clases" class="nav-link">Pseudo-Clases</a></li>
+        <li><a href="#pseudo-elementos" class="nav-link">Pseudo-Elementos</a></li>
+        <li><a href="#el_algoritmo_de_css" class="nav-link"><b>El Algoritmo de CSS</b></a></li>
+        <li><a href="#cascada" class="nav-link">- Cascada</a></li>
+        <li><a href="#origen" class="nav-link">- Origen del Código</a></li>
+        <li><a href="#espe" class="nav-link">- Especificidad del Selector</a></li>
+        <li><a href="#herencia" class="nav-link">- Herencia</a></li>
+        <li><a href="#reset-norma" class="nav-link">Reseteo y Normalización de Estilos</a></li>
+        <li><a href="#prefijos" class="nav-link">Prefijo de los Navegadores</a></li>
+        <li><a href="#modelo_de_caja" class="nav-link"><b>Modelo de Caja</b></a></li>
+        <li><a href="#box-content" class="nav-link">- Content</a></li>
+        <li><a href="#box-border" class="nav-link">- Border</a></li>
+        <li><a href="#box-padding-margin" class="nav-link">- Padding y Margin</a></li>
+        <li><a href="#l-vs-b" class="nav-link">Cajas de Línea vs Cajas de Bloque</a></li>
+        <li><a href="#box-inline" class="nav-link">- Caja de Línea</a></li>
+        <li><a href="#box-block" class="nav-link">- Caja de Bloque</a></li>
+        <li><a href="#display" class="nav-link">Propiedad Display</a></li>
+        <li><a href="#overflow" class="nav-link">Propiedad Overflow</a></li>
+        <li><a href="#size" class="nav-link">Tamaño de Caja</a></li>
+        <li><a href="#center" class="nav-link">Centrado de Caja</a></li>
+        <li><a href="#posicionamiento_en_css" class="nav-link"><b>Posicionamiento en CSS</b></a></li>
+        <li><a href="#static" class="nav-link">- Posicionamiento static</a></li>
+        <li><a href="#relative" class="nav-link">- Posicionamiento relative</a></li>
+        <li><a href="#absolute" class="nav-link">- Posicionamiento absolute</a></li>
+        <li><a href="#fixed" class="nav-link">- Posicionamiento fixed</a></li>
+        <li><a href="#sticky" class="nav-link">- Posicionamiento sticky</a></li>
+        <li><a href="#z-index" class="nav-link">- Propiedad z-index</a></li>
+        <li><a href="#float" class="nav-link">- Los elementos flotantes</a></li>
+    </nav>
+
+    <main id="main-doc">
+      <section id="introduccion_a_css" class="main-section">
+        <header>Introducción a CSS</header>
+        <p><b>CSS</b> acrónimo de <i>Cascade Style Sheet</i>, que en español se traduce como
+          <i>hoja de estilo en cascada</i>, <b>es un lenguaje
+            de definición de estilos</b>, en el cual se pueden definir variables y algunas funciones.
+        </p>
+
+        <h3 id="sintaxis-basica">Sintáxis Básica</h3>
+        <p>En CSS la sintaxis de las reglas constan de dos partes:</p>
+        <ol>
+          <li><b>El Selector:</b> es el elemento que indica a que parte del documento HTML se le aplicará un bloque de
+            declaración estilos. El selector puede ser:
+            <ul>
+              <li>Cualquier <b>etiqueta</b> HTML. Ejemplo h1, p, body, a, etc...</li>
+              <li>Una <b>clase</b> representado con el símbolo del punto (.) y una palabra cualquiera. Ejemplo .header,
+                .bg-color, .ventana, etc...</li>
+              <li>Un <b>id</b> representado con el símbolo del numeral (#) y una palabra cualquiera. Ejemplo #header,
+                #bg-color,
+                #ventana, etc...</li>
+              <p>Tanto el selector de clase como el de id deben estar declarados como atributos dentro de la etiqueta al
+                a
+                que se quiere dar estilo</p>
+            </ul>
+
+          </li>
+          <li><b>El Bloque de Declaraciones:</b> es cada uno de los atributos del elemento HTML que vamos a modificar.
+            La
+            sintaxis obligatoria
+            es la siguiente:
+            <code><b>css</b>
+              Elemento-HTML {
+        atributo: valor;
+        atributo-de-mas-de-dos-palabras: valor;
+      }
+                 
+      /*Ejemplo*/
+      h1 {
+        color: orange;
+        background-color: antiquewhite;
+       }
+             </code>
+            <p>El bloque de declaración va dentro de llaves, lo atributos de mas de una palabra van separados por
+              guiones,
+              luego de los
+              atributos va dos puntos (:), seguidos del valor de dicho atributo y para finalizar hay que poner
+              obligatoriamente punto
+              y coma (;)</p>
+          </li>
+        </ol>
+
+        <h3 id="comentarios">Comentarios en CSS</h3>
+        <p>Los comentarios en CSS van de limitados por (/*) y (*/). Ademas de comentar también se usan para
+          inhabilitar
+          código.</p>
+        <code><b>css</b>
+          /*h1 {
+                color: orange;
+                background-color: antiquewhite;
+                }
+                */
+            </code>
+
+        <h3 id="enlace">Formas de aplicar CSS</h3>
+        <p>Hay tres formas de invocar los estilos:</p>
+        <ul>
+          <li><b>En línea</b>: es cuando a través del atributo style de HTML aplicas los estilos directo al
+            elemento.
+            <code>&lt;h3 style="font-weight: bold;"&gt;Titulo de sección&lt;/h3&gt;
+              </code>
+          </li>
+          <li><b>Interno</b>: es cuando aplicamos dentro el mismo documento HTML con la etiqueta style en la
+            cabecera
+            <code>&lt;head&gt;
+                  &lt;style&gt;
+                    body {
+                      display: flex;
+                      flex-direction: column;
+                    }
+                  &lt;/style&gt;
+                &lt;/head&gt;
+              </code>
+          </li>
+          <li><b>Externo</b>: es cuando en la cabecera del documento con la etiqueta &lt;link&gt; enlazamos a una
+            hoja
+            de
+            estilos externa.
+            <code>&lt;head&gt;
+                 &lt;link rel="stylesheet" href="styles.css"&gt;
+                &lt;/head&gt;
+              </code>
+          </li>
+          <li><b>@import url()</b>: de esta manera podemos mandar a llamar una hoja de estilo desde otra hoja de
+            estilo y
+            aplicar los estilos de la hoja enlazada. Pero no es una buena practica porque este método
+            es bloqueante.</li>
+        </ul>
+      </section>
+      <a href="#" style="text-decoration:none ;">⬆️</a>
+
+
+      <section id="selectores_css" class="main-section">
+        <header>Selectores CSS</header>
+        <h4 id="select-basicos">Selectores básicos (etiquetas, <i>id</i> y <i>class</i>):</h4>
+        <ul>
+          <li><b>Etiquetas</b>: son elementos del HTML. Este tipo de selector aplica el estilo a todos los elementos
+            con
+            esa
+            etiqueta que
+            estén dentro del documento HTML.
+            <code><b>css</b>
+              html {
+                  box-sizing: border-box;
+                  font-size: 16px;
+                  }
+                </code>
+          </li>
+          <li><b>Identificadores</b>: es el atributo id de un elemento HTML y se identifica con un numeral (#). Dar
+            estilos con
+            id se
+            considera un AntiPatron, porque los id son únicos además tienen mayor peso que los otros selectores, por
+            eso
+            no es
+            recomendado.
+            <code><b>css</b>
+              #navbar {
+                  display: none;
+                  position: fixed;
+                  top: 0;
+                  left: 0;
+                  min-width: auto;
+                  width: auto;
+                  height: 100vh;
+                  background-color: salmon;
+                  }
+                </code>
+          </li>
+          <li><b>Clases</b>: es el atributo class de un elemento HTML y se identifica con un punto (.). Las clases son
+            las mas
+            recomendadas
+            porque pueden ser múltiples, se pueden repetir en distintas etiquetas HTML y son reutilizables. Es
+            recomendable nombrar
+            las clases según la función que cumplan.
+            <code><b>css</b>
+              .main-section{
+                  padding: 1rem;
+                  }
+              </code>
+          </li>
+        </ul>
+
+        <h4 id="select-direct-des">Selector de hijos directos y descendientes</h4>
+        <ul>
+          <li>Un selector de hijos directos es aquel primer elemento anidado dentro de otro. Se representa con el
+            símbolo (>). En el siguiente ejemplo seleccionaremos los hijos directos li del elemento ul que tiene la
+            clase "hijos-directos".
+            <code><b>html</b>        
+                &lt;ul class="hijos-directos">
+                  &lt;li&gt;&lt;b&gt;Primavera&lt;/b&gt;&lt;/li&gt;
+                  &lt;li&gt;&lt;b&gt;Verano&lt;/b&gt;&lt;/li&gt;
+                  &lt;li&gt;&lt;b&gt;Otoño&lt;/b&gt;&lt;/li&gt;
+                  &lt;li&gt;&lt;b&gt;Invierno&lt;/b&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+        <b>css</b>
+                .hijos-directos > li {
+                background-color: thistle;
+                }
+                
+            </code>
+          </li>
+          <li>Un selector de hijos descendientes es aquel que se aplica a cualquier elemento sin importar el orden
+            anidado dentro de
+            otro. Se representa con un espacio en blanco ( ).
+            <code><b>html</b>
+                 &lt;ul class="hijos-directos">
+                  &lt;li&gt;&lt;b&gt;Primavera&lt;/b&gt;&lt;/li&gt;
+                  &lt;li&gt;&lt;b&gt;Verano&lt;/b&gt;&lt;/li&gt;
+                  &lt;li&gt;&lt;b&gt;Otoño&lt;/b&gt;&lt;/li&gt;
+                  &lt;li&gt;&lt;b&gt;Invierno&lt;/b&gt;&lt;/li&gt;
+                  &lt;/ul&gt;
+        <b>css</b>
+                .hijos-directos  b {
+                background-color: thistle;
+                }
+          </code>
+          </li>
+        </ul>
+
+        <h4 id="select-her-adya">Selector de hermanos y adyacente</h4>
+        <ul>
+          <li>Los selectores hermanos en general aplica estilo a los elementos siguientes (que estén por debajo) en el
+            mismo nivel del
+            elemento de referencia. Se representa con el símbolo (~)
+            <code><b>html</b> 
+&lt;ul >
+&lt;li&gt;&lt;b&gt;Primavera&lt;/b&gt;&lt;/li&gt;
+&lt;li class="hermanos-general"&gt;&lt;b&gt;Verano&lt;/b&gt;&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Otoño&lt;/b&gt;&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Invierno&lt;/b&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+<b>css</b> 
+.hermanos-general ~ li {
+background-color: thistle;
+}
+          </code>
+          </li>
+          <li>Los selectores de hermanos adyacentes a diferencia del general, aplica solo al siguiente hermano. Se
+            representa con el
+            signo (+).
+            <code><b>html</b> 
+                      &lt;ul >
+                      &lt;li&gt;&lt;b&gt;Primavera&lt;/b&gt;&lt;/li&gt;
+                      &lt;li class="hermano-adyacente"&gt;&lt;b&gt;Verano&lt;/b&gt;&lt;/li&gt;
+                      &lt;li&gt;&lt;b&gt;Otoño&lt;/b&gt;&lt;/li&gt;
+                      &lt;li&gt;&lt;b&gt;Invierno&lt;/b&gt;&lt;/li&gt;
+                      &lt;/ul&gt;
+                      
+                      <b>css</b> 
+                      .hermano-adyacente + li {
+                      background-color: thistle;
+                      }
+                                </code>
+          </li>
+        </ul>
+        <h4 id="select-atributos">Selectores de atributos</h4>
+        <p>Los estilos CSS se pueden aplicar tomando como referencia cualquier atributo de cualquier etiqueta HTML.</p>
+        <ul>
+          <li>Se puede acceder a los atributos con los corchetes junto al selector de la etiqueta [].
+            <code><b>css</b>
+.selectores-atributos a[href] {
+color: orangered;
+}
+          </code>
+          </li>
+          <li>También podemos acceder al valor del atributo declarando atributo y valor.
+            <code><b>css</b>
+.selectores-atributos a[target="_blank"] {
+font-weight: bold;
+}
+          </code>
+          </li>
+          <li>Otra manera de usarlo es pasando un (*) y un valor junto al atributo, esto buscara el valor pasado dentro
+            del atributo.
+            <code><b>css</b>
+.selectores-atributos a[href*="jonmircha"] {
+font-size: 24px;
+}
+          </code>
+          </li>
+          <li>Similar a la forma anterior también podemos pasar un atributo unido al signo [^] y una valor, esto lo que
+            hará es
+            aplicar el estilo siempre y cuando el atributo empiece con el valor pasado.
+            <code><b>css</b>
+.selectores-atributos a[href^="http:"] {
+text-decoration: none;
+}
+          </code>
+          </li>
+          <li>Inverso al anterior, si usamos el signo ($) aplicará el estilo siempre y cuando el valor del atributo
+            termine con el
+            valor pasado.
+            <code><b>css</b>
+            .selectores-atributos a[href$=".com"] {
+            background-color: brown;
+            }
+          </code>
+          </li>
+          <li>Usando el signo de elemento hermano (~) podemos buscar dentro de una lista de clases.
+            <code><b>css</b>
+.selectores-atributos a[href$=".com"] {
+background-color: brown;
+}
+          </code>
+          </li>
+          <li>El signo (|) similar al anterior, nos permite buscar dentro de una lista de clases, pero con la variante
+            es que el valor
+            buscado debe estar seguido por un guion medio.
+            <code><b>css</b>
+.selectores-atributos a[class|="menu"] {
+font-style: italic;
+}
+          </code>
+          </li>
+        </ul>
+        <h4 id="select-universal">Selector Universal</h4>
+        <p>El selector universal aplica estilos a todos los elementos HTML que hayan dentro del documento. Se representa
+          con el
+          símbolo (*).</p>
+        <code><b>html</b>
+          &lt;ul class="selector-universal"&gt;
+          &lt;li&gt;&lt;b&gt;Primavera&lt;/b&gt;&lt;/li&gt;
+          &lt;li &gt;&lt;b&gt;Verano&lt;/b&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;b&gt;Otoño&lt;/b&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;b&gt;Invierno&lt;/b&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+<b>css</b>
+* {
+font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.selector-universal * {
+font-size: 26px;
+}
+        </code>
+        <h4 id="select-agrupa">Agrupación de selectores</h4>
+        <p>Para agrupar selectores solo debemos separarlos con coma (,) antes de los corchetes</p>
+        <code><b>css</b>
+input[type="text"], 
+input[type="email"],
+textarea {
+border-color: yellow;
+background-color: black;
+display: block;
+border-width: 2px;
+font-size: 20px;
+width: 300px;
+}
+</code>
+        <h3 id="pseudo-clases">Pseudo-clases</h3>
+        <p>Las pseudo-clases van a dar estilos dependiendo del contexto, posición o estado del elemento. Para usarlas se
+          colocan
+          dos puntos (:) después del selector. A continuación algunas de las mas usadas.</p>
+        <code><b>css</b> <b>pseudo-clases de estado</b>
+.selector:required { 
+border-color: yellow;
+}
+.selector:valid {  
+border-color: green;
+}
+.selector:invalid {  
+border-color: red;
+}
+.selector:focus {  
+background-color: skyblue;
+}
+.selector:disabled {  
+background-color: pink;
+}
+.menu a:visited { 
+color: olive;
+}
+.menu a:hover { 
+color: orange;
+}
+.p:hover {
+font-size: 20px;
+}
+
+#temario:target { 
+background-color: olivedrab;
+}
+<b>pseudo-clases de posición</b>
+.lista li:first-child { ⬅️Primer elemento hijo
+  color: green;
+}
+.lista li:last-child { ⬅️Ultimo elemento hijo
+color: violet;
+}
+.lista li:nth-child(3) { ⬅️Puede recibir la posicion del elemento hijo
+  color: navy;
+}
+.lista li:nth-child(4n + 1) { ⬅️O un patron para aplicar estilos
+  font-size: 30px;
+}
+.lista li:nth-child(3n) { ⬅️Un patron que estila cada 3 elementos hijos
+  font-weight: bold;
+}
+.lista li:nth-child(even) { ⬅️Patron que aplica a los hijos pares
+  background-color: orange;
+}
+.lista li:nth-child(odd) { ⬅️Patron que aplica a los hijos impares
+  background-color: yellow;
+}
+<b>pseudo-clases de contexto</b>
+.articulo p:first-of-type { ⬅️Primer hijo de su tipo
+background-color: pink;
+}
+.articulo p:last-of-type { ⬅️Ultimo hijo de su tipo
+background-color: violet;
+}
+.articulo p:nth-of-type(3) { ⬅️Patron cada 3 elementos de su tipo
+background-color: fuchsia;
+}
+.articulo *:not(p, footer) { ⬅️Aplica a todos excepto a los que se le pasaron
+background-color: beige;
+}
+
+</code>
+        <h3 id="pseudo-elementos">Pseudo-elementos</h3>
+        <p>Dan estilos a partes especificas de un elemento, se usa el (::) para diferenciarlos de las pseudoclases. Si
+          queremos agregar contenido es importante
+          usar el atributo content: “”;</p>
+        <code><b>css</b>
+            .saga-precio::before { ⬅️Agrega contenido antes del elemento
+            content: "$";
+            font-weight: bold;
+            }
+            
+            .saga-precio::after { ⬅️Agrega contenido después del elemento
+            content: "USD";
+            }
+
+            .input::first-letter { ⬅️Aplica a la primera letra del elemento
+            font-weight: bold;
+            font-size: 32px;
+            }
+            
+            .input::first-line { ⬅️Aplica a la primera linea del elemento
+            color: coral;
+            }
+            
+            .input::selection { ⬅️Aplica cuando seleccionamos un texto
+            color: green;
+            background-color: blueviolet;
+            }
+            
+            .input::placeholder { ⬅️Aplica al placeholder del input
+            color: violet;
+            }
+
+          </code>
+      </section>
+      <a href="#" style="text-decoration:none ;">⬆️</a>
+
+
+      <section id="el_algoritmo_de_css" class="main-section">
+        <header>El Algoritmo de CSS</header>
+        <p>El algoritmo de CSS es la forma en que el navegador aplica los estilos al documento HTML. Es vital entender
+          este
+          concepto par que entiendas como se aplican y en algunas ocasiones se sobrescriben las reglas CSS.</p>
+        <h3 id="cascada">Cascada</h3>
+        <p>Es el mecanismo que tiene el navegador web para ir aplicando los estilos, y en base a esto toma tres aspectos
+          en
+          particular:</p>
+        <ol>
+          <li>
+            <h4 id="origen">Origen del Código</h4>
+            <ul>
+              <li>Primero tenemos el userAgent, son los estilos que se aplican por defecto al documento.</li>
+              <li>Después tenemos las personalizaciones del usuario, por ejemplo el zoom que el usuario hace a una
+                pagina</li>
+              <li>Por ultimo el código del autor, que básicamente son los estilos que le escribamos al documento.</li>
+            </ul>
+          </li>
+          <li>
+            <h4 id="espe">Especificidad del Selector</h4>
+            <p>La especificidad es el peso que tiene un selector cuando hay conflicto de estilos. Se calcula de la
+              siguiente forma:</p>
+            <ul>
+              <li>Etiquetas y Pseudoelementos ➡️ 0,0,0,1</li>
+              <li>Clases, Atributos y Pseudoclases ➡️ 0,0,1,0</li>
+              <li>Identificadores ➡️ 0,1,0,0</li>
+              <li>Estilos en línea ➡️ 1,0,0,0</li>
+              <li>!important ➡️ Rompe la especificidad priva sobre todos</li>
+            </ul>
+          </li>
+          <li>
+            <h4 id="herencia">Herencia</h4>
+            <p>La herencia es la capacidad de un selector de obtener (heredar) los valores de sus ancestros mas
+              cercanos, para
+              aplicarla se usa el valor inherit, si queremos evitarla podemos asignar otro valor o inicializar la
+              propiedad en
+              cuestión con el valor initial. No todos los valores son heredables automáticamente, en general los que mas
+              se heredan
+              automáticamente son los valores que conciernen a la tipografía.</p>
+          </li>
+        </ol>
+
+        <h3 id="reset-norma">Reseteo y Normalización de Estilos</h3>
+        <p>Podemos usar hojas externas como <a href="https://necolas.github.io/normalize.css/">normalize.css</a> que nos
+          brindan un “reseteo” del css para luego
+          trabajar sobre
+          el.</p>
+        <h3 id="prefijos">Prefijo de los navegadores</h3>
+        <p>En el tiempo en el que los navegadores no se actualizaban tan a la par existían unos prefijos que nos
+          ayudaban a
+          implementar elementos del lenguaje que aun no estaban plenamente soportadas por todos los navegadores. Pero
+          estos
+          prefijos ya no son tan necesarios. Los prefijos son los siguientes:</p>
+        <ul>
+          <li>Navegadores de Microsoft: -ms-</li>
+          <li>Navegadores de Mozilla: -moz-</li>
+          <li>Navegadores de Opera: -o-</li>
+          <li>Todos los demás navegadores: -webkit-</li>
+        </ul>
+      </section>
+      <a href="#" style="text-decoration:none ;">⬆️</a>
+
+      <section id="modelo_de_caja" class="main-section">
+        <header>Modelo de Caja</header>
+        <img
+          src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/7138a062-e3d5-4e08-83ec-4615ca8937fa/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220603%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220603T180319Z&X-Amz-Expires=86400&X-Amz-Signature=ef979901fe320821fc8505172d80c268ea2b03442936f367f2a361d0785d05b0&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject"
+          alt="box-model">
+        <p>Es la forma en como CSS interpreta las etiquetas HTML, pues para CSS cada una de las etiquetas HTML son
+          cajas, por ser
+          una cajas tiene 4 lados que van en el siguiente orden: top, right, bottom y left. Las cajas pueden ser en
+          línea o en
+          bloque con las siguientes propiedades:</p>
+        <h4 id="box-content">Content</h4>
+        <p>Es el contenido del elemento HTML, tomando en cuenta sus dimensiones (width & height). Estas dimensiones
+          hacen
+          referencia al ancho y alto del modelo de caja y se ven influida por el tamaño del viewport, pero pueden ser
+          modificadas.</p>
+        <h4 id="box-border">Border</h4>
+        <p>Es lo que delimita cada uno de los elementos HTML. Las propiedades de border son:</p>
+        <ul>
+          <li><b>border-color:</b> manipula el color del borde.</li>
+          <li><b>border-width:</b> manipula la anchura del borde, se le puede pasar unidades de medida o palabras como
+            thin →
+            1px; medium → 3px o thick → 5px.</li>
+          <li><b>border-style:</b> manipula el estilo del borde, los mas populares son solid, dashed o dotted.</li>
+          <li><b>border-radius:</b> es un shorthand que manipula cuan redondeada pueden ser las esquinas de una caja, el
+            orden en que va
+            aplicando el estilo es arriba-izq, arriba-der, abajo-der y por ultimo abajo-izq. Si queremos manipular una
+            por una
+            podemos usar border-top-left-radius, border-top-right-radius, border-bottom-left-radius,
+            border-bottom-right-radius.
+            Tambien podemos elegir poner border elípticos en vez de redondeados agregando una barra border-radius: 2rem
+            / 4rem;. Si
+            queremos un circulo, podemos pasarle un valor de 50% a border-radius</li>
+          <li><b>outline:</b> es un propiedad que agrega un borde adicional pero no entra en el modelo de caja, es decir
+            no interfiere con el
+            espacio de los otros elementos. Recibe al igual que border, grosor, estilo y color. También tiene una
+            propiedad llamada
+            outline-offset que aleja el outline del border, hacia afuera o hacia adentro. Es comunmente usado para
+            aplicar efectos
+            de sombreado.</li>
+        </ul>
+        <h4 id="box-padding-margin">Padding y Margin</h4>
+        <p>El padding son las distancias internas que hay desde el borde hasta el contenido, y el margin son las
+          distancias
+          externas que hay entre el elemento y sus hermanos o padres. Para ambas propiedades los valores se pueden pasar
+          de la
+          siguiente manera:</p>
+        <ul>
+          <li>1 valor: aplica para los 4 lados por igual.</li>
+          <li>2 valores: el primer valor aplica para los lados verticales top y botton, y el segundo valor aplica para
+            los lados
+            horizontales right y left.</li>
+          <li>3 valores: el primer valor aplica para top, el segundo para los dos lados horizontales y el tercero para
+            el bottom.</li>
+          <li>4 valores: cada valor aplica para cada lado de la caja, en el orden antes mencionado.</li>
+        </ul>
+        <p>Un dato importante al momento de maquetar es que los márgenes verticales se colapsan o se superponen, por tal
+          razón si
+          es recomendable usar o margin-top o margin-bottom. Esto solo aplica para los margenes verticales, los margenes
+          horizontales si se suman.</p>
+        <h3 id="l-vs-b">Cajas de Línea vs Cajas de Bloque</h3>
+        <h4 id="box-inline">Caja de Línea</h4>
+        <ul>
+          <li>Ocupan el espacio necesario para mostrar su contenido.</li>
+          <li>No tienen dimensiones modificables (alto, ancho).</li>
+          <li>Permiten otros elementos a su lado.</li>
+          <li>Padding y margin solo empujan a elementos adyacentes en horizontal, nunca en vertical.</li>
+          <li>Los elementos en línea son básicamente el span y los que afectan el texto, también los multimedia, y los
+            elementos del
+            formulario.</li>
+        </ul>
+        <h4 id="box-block">Caja de Bloque</h4>
+        <ul>
+          <li>Ocupan todo el ancho disponible, lo que genera saltos de línea.</li>
+          <li>Tienen dimensiones modificables (alto y ancho).</li>
+          <li>No permiten otros elementos a su lado, (aunque especifique un ancho, siguen ocupando todo el espacio
+            disponible).</li>
+          <li>Los elementos en bloque son básicamente el div, todos los encabezados, el formulario, entre otros.</li>
+        </ul>
+
+        <h3 id="display">Propiedad Display</h3>
+        <p>Es la propiedad que permite visualizar una caja. Tiene las siguientes valores:</p>
+        <ul>
+          <li><b>inline:</b> propiedad por defecto de las cajas de linea</li>
+          <li><b>block:</b> propiedad por defecto de las cajas de bloque</li>
+          <li><b>inline-block:</b> (se comporta como una caja de línea per acepta modificar sus dimensiones de alto y
+            ancho)
+          </li>
+          <li><b>none:</b> oculta la caja, pero sigue existiendo en el documento</li>
+          <li><b>list-item:</b> propiedad por defectos de las listas, aplica la sangría características de estas.</li>
+          <li><b>table:</b> propiedad por defectos de las tablas.</li>
+          <li><b>flex</b></li>
+          <li><b>grid</b></li>
+        </ul>
+        <p>Existe una propiedad similar a display: none, que se llama <b>visibility</b> cuya diferencia radica en que
+          con visibility,
+          podemos ocultar el elemento pero conservando el espacio de maquetado. Los valores de visibility son hidden y
+          visible</p>
+        <h3 id="overflow">Propiedad Overflow</h3>
+        <p>Esta propiedad nos permite definir que sucederá con el contenido cuando este desborde su caja contenedora.
+          Tiene las
+          siguientes propiedades:</p>
+        <ul>
+          <li>visible: el contenido puede desbordar la caja contenedora.
+          </li>
+          <img
+            src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/9034c3bc-f8a6-41a9-b19e-b1d51de33417/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220603%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220603T182520Z&X-Amz-Expires=86400&X-Amz-Signature=805d56ff1584b88a1e9329bc4f92a4567f225b2d369701b1fc02d3cf46c47ed9&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject"
+            alt="visible">
+          <li>hidden: oculta todo el contenido que no quepa en la caja contenedora.
+          </li>
+          <img
+            src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/49667030-a2d7-41d7-b4bc-f2b7d10a0950/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220603%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220603T182526Z&X-Amz-Expires=86400&X-Amz-Signature=3e9721aa21ae1e480dd91f0713c2a17786c1c3d8c9cc0757c82181091384599b&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject"
+            alt="hidden">
+          <li>scroll: aplica barras de desplazamiento para poder leer todo el contenido.
+          </li>
+          <img
+            src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/9b6cee17-c2bb-46bc-83fe-2c6d5edf3cb2/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220603%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220603T182530Z&X-Amz-Expires=86400&X-Amz-Signature=46d4dac3e58d3ed51ce4a1dc549c4c8d70d0287fa3e0d43dbedcf08989c01df9&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject"
+            alt="scroll">
+          <li>auto: esta propiedad aplica barras de desplazamiento según necesite el contenido.
+          </li>
+          <img
+            src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/55b57512-f6b9-40e7-bc43-2148c148c5d7/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220603%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220603T182534Z&X-Amz-Expires=86400&X-Amz-Signature=6fc7b7359f7760ba57707e23fc8494865317d504986ce08af9ce477271af8555&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject"
+            alt="auto">
+        </ul>
+        <p>Tambien existen overflow-x y overflow-y para aplicar la propiedad overflow a cada eje de la caja por
+          separado.</p>
+        <h3 id="size">Tamaño de Caja</h3>
+        <p>El box-sizing define como se calcula el ancho y la altura de una caja. Tiene dos propiedades:</p>
+        <ul>
+          <li>content-box: esta es la propiedad por defecto, y lo que indica es que el tamaño de la caja empieza a
+            partir
+            del content
+            box, sin incluir margenes y padding. Es decir si pasamos un width de 200px, vamos a tener como resultado un
+            content box
+            de 200px y a esto hay que sumarle lo que mida el border y el padding.</li>
+          <img
+            src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/7008bc39-9cfa-41e9-b54d-6a8d9d38f237/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220603%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220603T183156Z&X-Amz-Expires=86400&X-Amz-Signature=36a8ff503ace7a5c6f02b766b6448a02dbfdf2a611fdfe396512f4a223b8d792&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject"
+            alt="content">
+          <li>border-box: indica es que el tamaño de la caja empieza a partir del border de la caja, incluyendo margenes
+            y padding.</li>
+          <img
+            src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/aacf79bb-aacc-42ab-bc5c-b549d0470d9e/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220603%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220603T183159Z&X-Amz-Expires=86400&X-Amz-Signature=99257dabeec0bfbb9aceab21d1fe6ea46860eb5025598612b21e1b25fe2cf76f&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject"
+            alt="border">
+        </ul>
+        <p>Es buena practica resetear el documento para que todo sea border-box.</p>
+        <code>/* apply a natural box layout model to all elements, but allowing components to change */
+          html {
+          box-sizing: border-box;
+          }
+          *, *:before, *:after {
+          box-sizing: inherit;
+          }
+        </code>
+        <h3 id="center">Centrado de Caja</h3>
+        <p>Para el centrado de cajas es recomendable usar las propiedades <b>margin-left: auto</b> y margin-right: auto;
+        </p>
+      </section>
+      <a href="#" style="text-decoration:none ;">⬆️</a>
+
+      <section id="posicionamiento_en_css" class="main-section">
+        <header>Posicionamiento en CSS</header>
+        <p>La propiedad position al igual que la propiedad float nos permiten modificar la posición natural de cualquier
+          elemento
+          del documento HTML.</p>
+        <p>El navegador coloca cada elemento teniendo en cuenta el orden en el que aparece en el documento y su tipo de
+          visualización dependiendo si es un elemento de línea o de bloque. Con estas propiedades podemos alterar este
+          comportamiento.</p>
+        <p>Position trabaja con las propiedades top y left, bottom y right, y z-index (profundidad). Las propiedades top
+          y left van
+          a tener preferencia sobre bottom y right, es decir o usamos el primer par o el segundo. Estos parámetros
+          aceptan valores
+          negativos. Cuando usemos la propiedad static estos ejes no van a funcionar.</p>
+        <h3 id="static">Posicionamiento static</h3>
+        <p>Es la propiedad por defectos de los elementos HTML, cuando está especificada, las propiedades de top, left,
+          right o
+          bottom no funcionan.</p>
+        <h3 id="relative">Posicionamiento relative</h3>
+        <p>Con el posicionamiento relative el elemento conserva sus dimensiones y posición original en el flujo del
+          documento. Si
+          se mueve toma como referencia su posición original. Es decir, a partir del espacio que ocupe originalmente se
+          va a mover
+          según la indicación dada.</p>
+        <h3 id="absolute">Posicionamiento absolute</h3>
+        <p>Con el posicionamiento absolute el elemento pierde sus dimensiones y posición original en el flujo del
+          documento. Si se
+          mueve puede tomar como referencia 2 elementos:</p>
+        <ul>
+          <li>El primer ancestro con posicionamiento relative.</li>
+          <li>Si no encuentra al ancestro, se mueve respecto al documento HTML.</li>
+        </ul>
+        <h3 id="fixed">Posicionamiento fixed</h3>
+        <p>Con fixed el elemento pierde sus dimensiones y posición original en el flujo del documento. Si se mueve toma
+          como
+          referencia el documento HTML y queda fijo en la posición, cuando el scroll se mueve, elemento no lo hará,
+          quedará fijo.</p>
+        <h3 id="sticky">Posicionamiento sticky</h3>
+        <p>El posicionamiento sticky es una combinación de relative y fixed, para este posicionamiento las propiedades
+          de top,
+          left, bottom y right no mueven el elemento, sino que sirven como un punto de referencia, mientras no lleguen a
+          ese valor
+          el elemento se comporta como relative, cuando se llega, se convierte en fixed.</p>
+        <p>Para que este comportamiento funcione el elemento sticky debe ser hijo directo del body o su elemento
+          contenedor debe
+          tener dimensiones definidas y solo será sticky dentro de las dimensiones del su contenedor padre.</p>
+        <h3 id="z-index">Propiedad z-index</h3>
+        <p>Es la propiedad que permite controlar la profundidad de los elementos posicionados. Su valor por defecto es
+          auto, acepta
+          números positivos y negativos. A mayor valor del elemento está mas al frente, a menor valor mas al fondo.</p>
+        <p>Un elemento padre nunca podrá estar sobre sus elementos hijos, sin embargo los elementos hijos si pueden,
+          dándoles un
+          valor negativo y que el elemento padre no tenga definido un z-index. Es aconsejable ir definiéndonos de en
+          unidades de 100 en 100.</p>
+        <h3 id="float">Los elementos flotantes</h3>
+        <ul>
+          <li>float: convierte un elemento en flotante, permitiendo que sea empujado al espacio mas cercano que
+            encuentre a la derecha
+            o la izquierda respecto a la posición que ocupaba en el flujo de los elementos del documento HTML. Esto
+            automáticamente
+            lo saca del flujo del cuerpo del documento, pudiendo generar problemas de maquetado.</li>
+          <li>clear: viene a arreglar o limpiar los problemas en el flujo de los elementos del documento HTML
+            ocasionados por
+            float.(left, right, both)</li>
+        </ul>
+      </section>
+      <a href="#" style="text-decoration:none ;">⬆️</a>
+
+
+    </main>
+  </div>
+</body>
+
+</html>
